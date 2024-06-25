@@ -49,12 +49,23 @@ Set-AzureADUser -ObjectId <UserPrincipalName> -PasswordPolicies None
 ```
 
 ---
-[!WARNING]
+> [!WARNING]  
+> You should know what you are doing
 
-123
+
+To set the password to never expire for all users, use the following command:
+
+<details>
+
+<summary>Apply to All Users</summary>
 
 ###  Apply to All Users
-To set the password to never expire for all users, use the following command:
+
 ```
 Get-AzureADUser -All $true | ForEach-Object { Set-AzureADUser -ObjectId $_.ObjectId -PasswordPolicies DisablePasswordExpiration }
 ```
+
+</details
+
+
+
